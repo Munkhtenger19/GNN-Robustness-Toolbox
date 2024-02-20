@@ -28,9 +28,9 @@ class GNNRobustness():
         print("Available GNN Architectures:")
         for name, architecture in self.available_gnn_architectures.items():
             print(f"{name}")
-        gnn_architecture_name = self.args.architecture
-        self.model = self.available_gnn_architectures[gnn_architecture_name](in_channels = args.in_channels, hidden_channels = args.hidden_channels, num_layers = args.num_layers)
-        print(self.model)
+        self.model = self.available_gnn_architectures[self.args.architecture](in_channels = self.args.in_channels, hidden_channels = self.args.hidden_channels, num_layers = self.args.num_layers)
+        print('sda', self.model)
+        print('parameters', self.model)
         return self.model
 
     def choose_available_attack_strategies(self):
